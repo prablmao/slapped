@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: arial;
+    font-family: Arial, sans-serif;
 }
-body{
+
+body {
     width: 100%;
     height: 100vh;
     background: url(background.jpg);
@@ -12,11 +13,13 @@ body{
     background-repeat: no-repeat;
 
     display: grid;
-    grid-template-columns: 70%;
+    grid-template-columns: 1fr;
     justify-content: center;
     align-content: center;
+    padding: 1rem;
 }
-.heading{
+
+.heading {
     color: #fff;
     font-size: 40px;
     font-weight: lighter;
@@ -25,36 +28,93 @@ body{
     word-spacing: 6px;
     margin-bottom: 25px;
 }
-.description{
+
+.description {
     color: #ff0000;
     text-align: center;
     font-size: 15px;
     letter-spacing: 1px;
 }
-.timer{
+
+.timer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     margin-top: 30px;
 }
-.sub_timer{
+
+.sub_timer {
     width: 220px;
     background: rgba(255, 255, 255, 0.19);
     backdrop-filter: blur(20px);
     border-radius: 20px;
     overflow: hidden;
 }
-.digit{
+
+.digit {
     color: #fff;
     font-weight: lighter;
     font-size: 70px;
     text-align: center;
     padding: 2.5rem 0;
 }
-.digit_name{
+
+.digit_name {
     color: #000;
     background: #fff;
     text-align: center;
     padding: 0.6rem 0;
     font-size: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 30px;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .sub_timer {
+        width: 150px;
+    }
+
+    .digit {
+        font-size: 50px;
+        padding: 2rem 0;
+    }
+
+    .digit_name {
+        font-size: 16px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .sub_timer {
+        width: 120px;
+    }
+
+    .digit {
+        font-size: 40px;
+        padding: 1.5rem 0;
+    }
+
+    .digit_name {
+        font-size: 14px;
+    }
 }
