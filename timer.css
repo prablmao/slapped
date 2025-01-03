@@ -11,7 +11,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
@@ -19,11 +18,14 @@ body {
     padding: 1rem;
 }
 
+.wrapper {
+    text-align: center;
+}
+
 .heading {
     color: #fff;
     font-size: 40px;
     font-weight: lighter;
-    text-align: center;
     letter-spacing: 6px;
     word-spacing: 6px;
     margin-bottom: 25px;
@@ -31,7 +33,6 @@ body {
 
 .description {
     color: #ff0000;
-    text-align: center;
     font-size: 15px;
     letter-spacing: 1px;
 }
@@ -51,12 +52,36 @@ body {
     backdrop-filter: blur(20px);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7), 0 0 25px rgba(0, 255, 0, 0.7), 0 0 35px rgba(0, 0, 255, 0.7); /* RGB glow */
-    transition: box-shadow 0.3s ease-in-out;
+    border: 3px solid transparent;
+    box-shadow: 0 0 15px 3px rgba(255, 0, 0, 0.4); /* Initial red glow */
+    animation: rgb-glow 5s infinite alternate; /* Continuous RGB cycling */
+    transition: transform 0.3s ease; /* Transition for scaling */
+}
+
+/* Animation for RGB color cycling on the box-shadow */
+@keyframes rgb-glow {
+    0% {
+        box-shadow: 0 0 15px 3px rgba(255, 0, 0, 0.7); /* Red glow */
+    }
+    20% {
+        box-shadow: 0 0 15px 3px rgba(255, 165, 0, 0.7); /* Orange glow */
+    }
+    40% {
+        box-shadow: 0 0 15px 3px rgba(255, 255, 0, 0.7); /* Yellow glow */
+    }
+    60% {
+        box-shadow: 0 0 15px 3px rgba(0, 255, 0, 0.7); /* Green glow */
+    }
+    80% {
+        box-shadow: 0 0 15px 3px rgba(0, 0, 255, 0.7); /* Blue glow */
+    }
+    100% {
+        box-shadow: 0 0 15px 3px rgba(128, 0, 128, 0.7); /* Purple glow */
+    }
 }
 
 .sub_timer:hover {
-    box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 45px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 0, 255, 1); /* Hover effect for stronger glow */
+    transform: scale(1.05); /* Smooth scaling */
 }
 
 .digit {
